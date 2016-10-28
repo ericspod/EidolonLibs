@@ -50,3 +50,7 @@ Mercurial, CMake, Anaconda, and Pip are necessary to build, Cygwin is not but is
  7. Configure and generate the build information.
  
  8. Navigate in a shell to **build** and run **mingw32-make.exe**.
+ 
+ 9. Overwrite the files in **EidolonLibs/win64_mingw/bin/Release** with those you've just built in **build**.
+ 
+ 10. The include files shouldn't need changing, but these you would copy from the **ogre** directory into **EidolonLibs/win64_mingw/include/OGRE**, throwing in the **OgreBuildSettings.h** file from **build** so that the compilation configuration is kept.
