@@ -9,13 +9,13 @@ These were compiled by downloading the source for each and running the following
 
     python setup.py bdist_egg
     
-Typically this all that is necessary, although in some cases the **setup.py** file may need to be changed to use **setuptools**.
+Typically this is all that is necessary, although in some cases the **setup.py** file may need to be changed to use **setuptools**.
 
 ## Building Platform Directories
 
 ### win64_mingw
 
-This is the directory for windows libraries build with the MinGW installed into Anaconda.
+This is the directory for Windows 7/8/10 libraries build with the MinGW installed into Anaconda.
 All that needs to be here are Ogre3D libraries and their dependencies along with header files.
 Mercurial, CMake, Anaconda, and Pip are necessary to build, Cygwin is not but is handy anyway.
 
@@ -54,3 +54,24 @@ Mercurial, CMake, Anaconda, and Pip are necessary to build, Cygwin is not but is
  9. Overwrite the files in **EidolonLibs/win64_mingw/bin/Release** with those you've just built in **build**.
  
  10. The include files shouldn't need changing, but these you would copy from the **ogre** directory into **EidolonLibs/win64_mingw/include/OGRE**, throwing in the **OgreBuildSettings.h** file from **build** so that the compilation configuration is kept.
+
+### ubuntu12
+
+This is the directory for Ubuntu 12.04 libraries, although this might work for other versions of Ubuntu up to 14.04 but these haven't been tried.
+The system Ogre isn't new enough to use so the included one is build separately using the 1.9 branch of Ogre.
+
+### ubuntu14
+
+This is the directory for Ubuntu 14.04 libraries, although 14.10 should also work.
+Eidolon links with the system version of Ogre so there's not much in this directory.
+The plugin shared objects are included for consistency but these are the same as those that are installed on the system.
+To install the correct development libraries, run the following:
+
+    sudo apt-get install libogre-1.9-dev
+    
+### osx
+
+This is the directory for OS X 10.8 and up.
+Normally the libraries here and Eidolon itself is compiled on OS X 10.8 with the system Python to ensure compatibility with later OS versions.
+There's been problems of compiling on later OS versions and then not working on older, there are still users tied to older OS versions for technical reasons so these need support.
+
