@@ -59,6 +59,24 @@ Mercurial, CMake, Anaconda, and Pip are necessary to build, Cygwin is not but is
  10. Overwrite the files in **EidolonLibs/win64_mingw/bin/Release** with those you've just built in **build**.
  
  11. The include files shouldn't need changing, but these you would copy from the **ogre** directory into **EidolonLibs/win64_mingw/include/OGRE**, throwing in the **OgreBuildSettings.h** file from **build** so that the compilation configuration is kept.
+ 
+    
+### osx
+
+This is the directory for OS X 10.8 and up.
+Normally the libraries here and Eidolon itself is compiled on OS X 10.8 with the system Python to ensure compatibility with later OS versions.
+There's been problems of compiling on later OS versions and then not working on older, there are still users tied to older OS versions for technical reasons so these need support.
+
+The following instructions are for compiling in OSX using Xcode and CMake, however precompiled builds for Ogre 1.9 are available on the Ogre website and these suffice just fine, precompiles for later builds may be available from other developers as well.
+
+ 1. Install the Cg framework from nVidia: https://developer.nvidia.com/cg-toolkit
+ 
+ 2. Ogre is compiled by following the instructions for Windows starting from step 2 assuming everything is installed, with the following changes:
+   * CMAKE_CXX_FLAGS = -F/Library/Frameworks
+   * The Cg include directory should point to that in the included **Dependencies/src/Cg/include** directory
+   * The Cg_LIBRARY_* values should all be /Library/Frameworks/Cg.framework
+   
+ 3. Move the compiled frameworks into the **osx** directory as it is current setup. 
 
 ### ubuntu12
 
@@ -73,10 +91,5 @@ The plugin shared objects are included for consistency but these are the same as
 To install the correct development libraries, run the following:
 
     sudo apt-get install libogre-1.9-dev
-    
-### osx
 
-This is the directory for OS X 10.8 and up.
-Normally the libraries here and Eidolon itself is compiled on OS X 10.8 with the system Python to ensure compatibility with later OS versions.
-There's been problems of compiling on later OS versions and then not working on older, there are still users tied to older OS versions for technical reasons so these need support.
 
