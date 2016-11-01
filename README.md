@@ -42,18 +42,23 @@ Mercurial, CMake, Anaconda, and Pip are necessary to build, Cygwin is not but is
  
         hg clone https://bitbucket.org/cabalistic/ogredeps/
  
- Move this directory to **ogre/Dependencies**
+ Move this directory to **ogre/Dependencies**.
         
  6. Run CMake or CMake-gui with the checkout directory as the **Source Code** directory.
- Choose a directory somewhere else for the output directory (we'll call this **build** from here on)
+ Choose a directory somewhere else for the output directory (we'll call this **build** from here on) and create the configuration info.
  
- 7. Configure and generate the build information.
+ 7. A number of settings need to be changed for the correct building data to be made (cmake-gui makes this easier):
+   * CMAKE_BUILD_TYPE = Release
+   * Cg_BINARY_REL and Cg_BINARY_DBG should be set to where the cg.dll lines in the dependencies folder
+   * Everything will be default be built, so to save time uncheck all of the plugins and components except the GL render system, the Cg plugin, and the paging component. You should also unselect building tools and examples. If the Cg plugin doesn't show up, make sure the Cg binary paths are correct and then regenerate the config info.
  
- 8. Navigate in a shell to **build** and run **mingw32-make.exe**.
+ 8. Generate the build information.
  
- 9. Overwrite the files in **EidolonLibs/win64_mingw/bin/Release** with those you've just built in **build**.
+ 9. Navigate in a shell to **build** and run **mingw32-make.exe**.
  
- 10. The include files shouldn't need changing, but these you would copy from the **ogre** directory into **EidolonLibs/win64_mingw/include/OGRE**, throwing in the **OgreBuildSettings.h** file from **build** so that the compilation configuration is kept.
+ 10. Overwrite the files in **EidolonLibs/win64_mingw/bin/Release** with those you've just built in **build**.
+ 
+ 11. The include files shouldn't need changing, but these you would copy from the **ogre** directory into **EidolonLibs/win64_mingw/include/OGRE**, throwing in the **OgreBuildSettings.h** file from **build** so that the compilation configuration is kept.
 
 ### ubuntu12
 
