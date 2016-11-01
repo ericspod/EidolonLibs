@@ -50,7 +50,7 @@ Mercurial, CMake, Anaconda, and Pip are necessary to build, Cygwin is not but is
  7. A number of settings need to be changed for the correct building data to be made (cmake-gui makes this easier):
    * CMAKE_BUILD_TYPE = Release
    * Cg_BINARY_REL and Cg_BINARY_DBG should be set to where the cg.dll lines in the dependencies folder
-   * Everything will be default be built, so to save time uncheck all of the plugins and components except the GL render system, the Cg plugin, and the paging component. You should also unselect building tools and examples. If the Cg plugin doesn't show up, make sure the Cg binary paths are correct and then regenerate the config info.
+   * Everything will be default be built, so to save time uncheck all of the plugins and components except the GL render system, the Cg plugin, and the overlay component. You should also unselect building tools and examples. If the Cg plugin doesn't show up, make sure the Cg binary paths are correct and then regenerate the config info.
  
  8. Generate the build information.
  
@@ -76,7 +76,9 @@ The following instructions are for compiling in OSX using Xcode and CMake, howev
    * The Cg include directory should point to that in the included **Dependencies/src/Cg/include** directory
    * The Cg_LIBRARY_* values should all be /Library/Frameworks/Cg.framework
    
- 3. Move the compiled frameworks into the **osx** directory as it is current setup. 
+ 3. In the **build/lib/Ogre.framework/Headers** directory there will be directories you should copy into the **build/lib/macosx/Ogre.framework/Headers**.
+   
+ 4. Move the compiled frameworks into the **osx** directory as it is current setup. 
 
 ### ubuntu12
 
