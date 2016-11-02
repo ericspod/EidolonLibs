@@ -76,9 +76,7 @@ The following instructions are for compiling in OSX using Xcode and CMake, howev
    * The Cg include directory should point to that in the included **Dependencies/src/Cg/include** directory
    * The Cg_LIBRARY_* values should all be /Library/Frameworks/Cg.framework
    
- 3. In the **build/lib/Ogre.framework/Headers** directory there will be directories you should copy into the **build/lib/macosx/Ogre.framework/Headers**.
-   
- 4. Move the compiled frameworks into the **osx** directory as it is current setup. 
+ 3. Move the compiled frameworks into the **osx/bin** directory. The Cg framework is copied from the one installed by the installer, so just keep this.
 
 ### ubuntu12
 
