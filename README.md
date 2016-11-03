@@ -49,7 +49,7 @@ Mercurial, CMake, Anaconda, and Pip are necessary to build, Cygwin is not but is
  
  7. A number of settings need to be changed for the correct building data to be made (cmake-gui makes this easier):
    * CMAKE_BUILD_TYPE = Release
-   * Cg_BINARY_REL and Cg_BINARY_DBG should be set to where the cg.dll lines in the dependencies folder
+   * Cg_BINARY_REL should be set to where the cg.dll lives in the dependencies folder
    * Everything will be default be built, so to save time uncheck all of the plugins and components except the GL render system, the Cg plugin, and the overlay component. You should also unselect building tools and examples. If the Cg plugin doesn't show up, make sure the Cg binary paths are correct and then regenerate the config info.
  
  8. Generate the build information.
@@ -71,7 +71,7 @@ The following instructions are for compiling in OSX using Xcode and CMake, howev
 
  1. Install the Cg framework from nVidia: https://developer.nvidia.com/cg-toolkit
  
- 2. Ogre is compiled by following the instructions for Windows starting from step 2 assuming everything is installed, with the following changes:
+ 2. Ogre is compiled by following the instructions for Windows starting from step 4 assuming everything is installed, with the following changes:
    * CMAKE_CXX_FLAGS = -F/Library/Frameworks
    * The Cg include directory should point to that in the included **Dependencies/src/Cg/include** directory
    * The Cg_LIBRARY_* values should all be /Library/Frameworks/Cg.framework
@@ -81,8 +81,18 @@ The following instructions are for compiling in OSX using Xcode and CMake, howev
 ### ubuntu12
 
 This is the directory for Ubuntu 12.04 libraries, although this might work for other versions of Ubuntu up to 14.04 but these haven't been tried.
-The system Ogre isn't new enough to use so the included one is build separately using the 1.9 branch of Ogre.
+The system Ogre isn't new enough to use so the included one is build separately using the current branch of Ogre.
 
+ 1. Some extra packages are needed:
+   * libxaw7-dev
+   * nvidia-cg-toolkit
+   * libxrandr-dev
+   * Dev packages for your OpenGL, which if you're using MESA will be libglu1-mesa-dev and its dependencies
+
+ 2. Follow the instructions for Windows starting from step 4 assuming everything is installed
+ 
+ 3. Move the compiled shared objects into the **ubuntu12/lib** directory. The libCg.so file is copied from the system so installing the Cg package isn't strictly necessary 
+ 
 ### ubuntu14
 
 This is the directory for Ubuntu 14.04 libraries, although 14.10 should also work.
