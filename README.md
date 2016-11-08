@@ -11,6 +11,12 @@ These were compiled by downloading the source for each and running the following
     
 Typically this is all that is necessary, although in some cases the **setup.py** file may need to be changed to use **setuptools**.
 
+## IRTK
+
+The **IRTK** directory contains the executables for Windows, Linux, and OSX which Eidolon currently uses from the Image Regitration Toolkit (https://github.com/BioMedIA/IRTK). 
+Building instructions are found on the project's repository so there's no need to reproduce them here.
+Soon these will be replaced with those from MIRTK (https://github.com/BioMedIA/MIRTK) which is the successor project, so this directory will shortly be replaced or become legacy. 
+
 ## Building Platform Directories
 
 ### win64_mingw
