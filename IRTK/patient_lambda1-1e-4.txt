@@ -1,0 +1,79 @@
+#
+# Registration parameters
+#
+
+No. of resolution levels          = 3
+
+No. of bins                       = 64
+Epsilon                           = 0.000001
+Lregulation                       = 0.01
+Padding value                     = 0
+Similarity measure                = NMI
+Interpolation mode                = Linear
+Optimization method               = GradientDescent
+
+#
+# Non-rigid registration parameters
+#
+
+Lambda1                           = 0.0001
+Lambda2                           = 0
+Lambda3                           = 0
+Speedup factor                    = 2
+Control point spacing in X        = 32
+Control point spacing in Y        = 32
+Control point spacing in Z        = 32
+Subdivision                       = True
+MFFDMode      			  = True
+
+
+#
+# Registration parameters for resolution level 2
+#
+
+Resolution level                  = 1
+Target blurring (in mm)           = 0
+Target resolution (in mm)         = 0 0 0
+Source blurring (in mm)           = 0
+Source resolution (in mm)         = 0 0 0
+uTarget blurring (in mm)          = 0
+uTarget resolution (in mm)        = 0 0 0
+uSource blurring (in mm)          = 0
+uSource resolution (in mm)        = 0 0 0
+No. of iterations                 = 40
+No. of steps                      = 5
+Length of steps                   = 8
+
+#
+# Registration parameters for resolution level 3
+#
+
+Resolution level                  = 2
+Target blurring (in mm)           = 0
+Target resolution (in mm)         = 0 0 0
+Source blurring (in mm)           = 0
+Source resolution (in mm)         = 0 0 0
+uTarget blurring (in mm)          = 0
+uTarget resolution (in mm)        = 0 0 0
+uSource blurring (in mm)          = 0
+uSource resolution (in mm)        = 0 0 0
+No. of iterations                 = 40
+No. of steps                      = 5
+Length of steps                   = 8
+
+#
+# Registration parameters for resolution level 3
+#
+
+Resolution level                  = 3
+Target blurring (in mm)           = 0
+Target resolution (in mm)         = 0 0 0
+Source blurring (in mm)           = 0
+Source resolution (in mm)         = 0 0 0
+uTarget blurring (in mm)          = 0
+uTarget resolution (in mm)        = 0 0 0
+uSource blurring (in mm)          = 0
+uSource resolution (in mm)        = 0 0 0
+No. of iterations                 = 40
+No. of steps                      = 5
+Length of steps                   = 8
