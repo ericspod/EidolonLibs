@@ -15,13 +15,13 @@ function getFileDir() {
 }
 
 # directory of this script
-export VIZDIR=$(getFileDir "${BASH_SOURCE[0]}")
+export APPDIR=$(getFileDir "${BASH_SOURCE[0]}")
 
-export PYTHONPATH=$VIZDIR/src:$VIZDIR/src/eidolon:$VIZDIR/src/plugins
-export PATH="$VIZDIR/../Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+export PYTHONPATH=$APPDIR/src:$APPDIR/src/eidolon:$APPDIR/src/plugins
+export PATH="$APPDIR/../Frameworks/Python.framework/Versions/2.7/bin:$PATH"
 
-export DYLD_LIBRARY_PATH=$VIZDIR
-export DYLD_FRAMEWORK_PATH=$VIZDIR/../Frameworks
+export DYLD_LIBRARY_PATH=$APPDIR
+export DYLD_FRAMEWORK_PATH=$APPDIR/../Frameworks
 
-python2.7 $VIZDIR/main.py $@
+python2.7 $APPDIR/main.py $@
 

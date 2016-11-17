@@ -15,16 +15,16 @@ function getFileDir() {
 }
 
 # directory of this script
-export VIZDIR=$(getFileDir "${BASH_SOURCE[0]}")
+export APPDIR=$(getFileDir "${BASH_SOURCE[0]}")
 
 # symlink each compiled library for OSX to the correct name
-for i in $VIZDIR/src/eidolon/*.dylib; do ln -fs $i ${i%.dylib}.so;done
+for i in $APPDIR/src/eidolon/*.dylib; do ln -fs $i ${i%.dylib}.so;done
 
-export PYTHONPATH=$VIZDIR/src:$VIZDIR/src/eidolon:$VIZDIR/src/plugins:$VIZDIR/src/ui
-export PATH="$VIZDIR/../Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+export PYTHONPATH=$APPDIR/src:$APPDIR/src/eidolon:$APPDIR/src/plugins:$APPDIR/src/ui
+export PATH="$APPDIR/../Frameworks/Python.framework/Versions/2.7/bin:$PATH"
 
-export DYLD_LIBRARY_PATH=$VIZDIR
-export DYLD_FRAMEWORK_PATH=$VIZDIR/../Frameworks
+export DYLD_LIBRARY_PATH=$APPDIR
+export DYLD_FRAMEWORK_PATH=$APPDIR/../Frameworks
 
-python2.7 -s $VIZDIR/main.py $@
+python2.7 -s $APPDIR/main.py $@
 
