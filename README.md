@@ -2,6 +2,12 @@
 Precompiled Libraries for Eidolon. 
 These include shared libraries for supported platforms, Python eggs in the **python** directory, and other libraries/utilities.
 
+## Updating
+
+As a consequence of this repo always being used as a submodule in Eidolon, any changes here require the submodule SHA-1 value to be changed in the Eidolon repo and then updated. If this isn't done then the Eidolon checkout will continue to use the older version of this repo. To do the update, use this command in the Eidolon repo:
+
+    git submodule foreach git pull origin master
+
 ## Building Eggs
 
 The **python** directory contains eggs for a number of libraries.
