@@ -8,12 +8,16 @@ As a consequence of this repo always being used as a submodule in Eidolon, any c
 
     git submodule foreach git pull origin master
 
-## Building Eggs
+## Building Eggs/Wheels
 
-The **python** directory contains eggs for a number of libraries.
+The **python** directory contains eggs or wheels for a number of libraries.
 These were compiled by downloading the source for each and running the following command to produce the egg file:
 
     python setup.py bdist_egg
+    
+or wheel:
+
+    python setupt.py bdist_wheel
     
 Typically this is all that is necessary, although in some cases the **setup.py** file may need to be changed to use **setuptools**.
 
@@ -21,7 +25,8 @@ Typically this is all that is necessary, although in some cases the **setup.py**
 
 The **IRTK** directory contains the executables for Windows, Linux, and OSX which Eidolon currently uses from the Image Regitration Toolkit (https://github.com/BioMedIA/IRTK). 
 Building instructions are found on the project's repository so there's no need to reproduce them here.
-Soon these will be replaced with those from MIRTK (https://github.com/BioMedIA/MIRTK) which is the successor project, so this directory will shortly be replaced or become legacy. 
+Soon these will be replaced with those from MIRTK (https://github.com/BioMedIA/MIRTK) which is the successor project, so this directory will shortly be replaced or become legacy.
+Current a **MIRTK** is also included which provides some parallel functionality, specifically motion tracking. 
 
 ## Building Platform Directories
 
@@ -90,10 +95,10 @@ The following instructions are for compiling in OSX using Xcode and CMake, howev
    
  3. Move the compiled frameworks into the **osx/bin** directory. The Cg framework is copied from the one installed by the installer, so just keep this.
 
-### ubuntu12
+### linux
 
-This is the directory for Ubuntu 12.04 libraries, although this might work for other versions of Ubuntu up to 14.04 but these haven't been tried.
-The system Ogre isn't new enough to use so the included one is build separately using the current branch of Ogre.
+This is the directory for Linux (formerlly just Ubuntu 12.04) libraries, this is expected to work for other versions of Ubuntu and other current distros.
+The system Ogre for some distros isn't new enough to use so the included one is build separately using the current branch of Ogre.
 
  1. Some extra packages are needed:
    * libxaw7-dev
@@ -103,15 +108,6 @@ The system Ogre isn't new enough to use so the included one is build separately 
 
  2. Follow the instructions for Windows starting from step 4 assuming everything is installed
  
- 3. Move the compiled shared objects into the **ubuntu12/lib** directory. The libCg.so file is copied from the system so installing the Cg package isn't strictly necessary 
+ 3. Move the compiled shared objects into the **linux/lib** directory. The **libCg.so** file is copied from the system so installing the Cg package isn't strictly necessary 
  
-### ubuntu14
-
-This is the directory for Ubuntu 14.04 libraries, although 14.10 should also work.
-Eidolon links with the system version of Ogre so there's not much in this directory.
-The plugin shared objects are included for consistency but these are the same as those that are installed on the system.
-To install the correct development libraries, run the following:
-
-    sudo apt-get install libogre-1.9-dev
-
 
