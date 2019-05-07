@@ -77,6 +77,14 @@ Mercurial, CMake, Anaconda, and Pip are necessary to build, Cygwin is not but is
  
  11. The include files shouldn't need changing, but these you would copy from the **ogre** directory into **EidolonLibs/win64_mingw/include/OGRE**, throwing in the **OgreBuildSettings.h** file from **build** so that the compilation configuration is kept.
  
+ 
+#### Building Ogre with MinGW 64-bit Supplied with Anaconda
+
+Building Ogre with the MinGW specified above may require a few code tweaks.
+Read the following, the first is a step guide and the second is the changes to Ogre code necessary to get MinGW to work:
+ * http://www.ogre3d.org/tikiwiki/tiki-index.php?page=Building+Ogre+with+boost+1.50+upwards+and+MinGW
+ * http://www.ogre3d.org/tikiwiki/tiki-index.php?page=TDM+MinGW64+build+guide
+ 
     
 ### osx
 
